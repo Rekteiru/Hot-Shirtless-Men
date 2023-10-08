@@ -1,0 +1,18 @@
+[
+  {
+    "modid": "${modid}",
+    "name": "Hot Shirtless Men",
+    "description": "Hot Shirtless Men (and bows/drills fixes) no rat I promise.",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "Rekteiru"
+    ],
+    "credits": "romangraef",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

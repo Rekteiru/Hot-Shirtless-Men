@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <option name="defaultObfuscationEnv" value="named:intermediary" />
+        <option name="inMapFileNamedIntermediary" value="C:\Users\user\.gradle\caches\essential-loom\1.8.9\de.oceanlabs.mcp.mcp_stable.1_8_9.22-1.8.9-forge-1.8.9-11.15.1.2318-1.8.9\mappings-mixin-srg.tiny" />
+        <option name="outMapFileNamedIntermediary" value="C:\Users\user\Desktop\hotshirtlessmen\build\loom-cache\mixin-map-de.oceanlabs.mcp.mcp_stable.1_8_9.22-1.8.9-forge-1.8.9-11.15.1.2318-1.8.9.0.tiny" />
+        <option name="outRefMapFile" value="C:\Users\user\Desktop\hotshirtlessmen\build\classes\java\main\mixins.hotshirtlessmen.refmap.json" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5-SNAPSHOT/afd548f754a72df63a853c0cc1d064b6fcf76441/mixin-0.8.5-SNAPSHOT.jar" />
+        </processorPath>
+        <module name="hotshirtlessmen.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8" />
+  </component>
+</project>
