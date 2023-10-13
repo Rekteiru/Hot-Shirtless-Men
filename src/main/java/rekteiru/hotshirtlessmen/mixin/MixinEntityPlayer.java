@@ -1,5 +1,7 @@
 package rekteiru.hotshirtlessmen.mixin;
 
+import net.minecraft.entity.player.InventoryPlayer;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -7,30 +9,32 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Item;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.client.Minecraft;
+import com.mojang.authlib.GameProfile;
 
-import rekteiru.hotshirtlessmen.main;
+import rekteiru.hotshirtlessmen.Bow;
 
 @Mixin(EntityPlayer.class)
-public class MixinEntityPlayer {
-
-    Minecraft mine = main.mc;
+public abstract class MixinEntityPlayer {
 
     @Shadow
     private ItemStack itemInUse;
+
+    @Shadow
+    public InventoryPlayer inventory;
+
+    @Final
+    @Shadow
+    private GameProfile gameProfile;
 
     @Inject(method = "onUpdate", at = @At("HEAD"))
     protected void bowFixStuff(CallbackInfo ci){
         if (itemInUse != null) {
 
-            ItemStack itemstack = mine.thePlayer.inventory.getCurrentItem();
+            ItemStack itemstack = inventory.getCurrentItem();
 
-            if (itemstack != itemInUse) {
-                if (itemstack.getItem() == Item.getItemById(261) && itemstack.getItem() == itemInUse.getItem()) {
-                    itemInUse = itemstack;
-                }
+            if (Bow.BowFix(itemInUse, itemstack, gameProfile)) {
+                itemInUse = itemstack;
             }
         }
     }
