@@ -9,4 +9,4 @@ enjoy!
 ---USE AT YOUR OWN RISK, I AM NOT RESPONSIBLE IF YOU GET FLAGGED BY WATCHDOG (very low chance tbh)---
 
 MOD ISSUES:
-- Can sometimes crash your game if you're using Skytils' boxes that affect player entities (box spirit bears, box starred mobs, etc) probably because skytils uses mixins on that or something idk, will figure it out and fix it soon™ (3-5 business days (real))
+~~- Can sometimes crash your game if you're using Skytils' boxes that affect player entities (box spirit bears, box starred mobs, etc) probably because skytils uses mixins on that or something idk, will figure it out and fix it soon™ (3-5 business days (real))~~ Potentially fixed (needs some testing)
