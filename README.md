@@ -1,5 +1,5 @@
 # bow-and-drill-fix
-Fixes bows and drills resetting on inventory update
+Fixes bows and drills resetting on inventory update (video below)
 
 The drill code idea was mostly from RoseGold's Mobx Drill.
 Bow code is mine.
@@ -8,5 +8,5 @@ enjoy!
 
 ---USE AT YOUR OWN RISK, I AM NOT RESPONSIBLE IF YOU GET FLAGGED BY WATCHDOG (very low chance tbh)---
 
-MOD ISSUES:
-~~- Can sometimes crash your game if you're using Skytils' boxes that affect player entities (box spirit bears, box starred mobs, etc) probably because skytils uses mixins on that or something idk, will figure it out and fix it soon™ (3-5 business days (real))~~ Potentially fixed (needs some testing)
+Video showcase:
+https://medal.tv/games/minecraft/clips/1yFeoNtRqKT-Co/d1337B3kQcIF?invite=cr-MSxsZjcsMTc2OTYwOTA4LA
