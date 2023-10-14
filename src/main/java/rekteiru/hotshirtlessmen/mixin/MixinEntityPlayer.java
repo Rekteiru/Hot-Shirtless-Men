@@ -13,6 +13,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import com.mojang.authlib.GameProfile;
 
 import rekteiru.hotshirtlessmen.Bow;
+import rekteiru.hotshirtlessmen.main;
 
 @Mixin(EntityPlayer.class)
 public abstract class MixinEntityPlayer {
@@ -28,12 +29,15 @@ public abstract class MixinEntityPlayer {
     private GameProfile gameProfile;
 
     @Inject(method = "onUpdate", at = @At("HEAD"))
-    protected void bowFixStuff(CallbackInfo ci){
-        if (itemInUse != null) {
+    private void bowFixStuff(CallbackInfo ci){
+        if (itemInUse != null &&
+                inventory != null &&
+                gameProfile != null &&
+                gameProfile == main.mc.thePlayer.getGameProfile()) {
 
             ItemStack itemstack = inventory.getCurrentItem();
 
-            if (Bow.BowFix(itemInUse, itemstack, gameProfile)) {
+            if (Bow.BowFix(itemInUse, itemstack)) {
                 itemInUse = itemstack;
             }
         }

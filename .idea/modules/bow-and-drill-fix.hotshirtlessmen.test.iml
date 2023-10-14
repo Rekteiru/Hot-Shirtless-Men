@@ -5,8 +5,8 @@
       <configuration>
         <autoDetectTypes>
           <platformType>FORGE</platformType>
-          <platformType>MCP</platformType>
           <platformType>MIXIN</platformType>
+          <platformType>MCP</platformType>
         </autoDetectTypes>
       </configuration>
     </facet>

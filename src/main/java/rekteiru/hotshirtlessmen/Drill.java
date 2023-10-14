@@ -12,8 +12,9 @@ public class Drill {
 
         if (currentItemHittingBlock != null && itemstack != null)
         {
-            //todo: add a toggle here
-            if(itemstack.getItem() == currentItemHittingBlock.getItem() && itemstack.getItem() == Item.getItemById(409)) {
+            if (main.DRILL_TOGGLE &&
+                    itemstack.getItem() == currentItemHittingBlock.getItem() &&
+                    itemstack.getItem() == Item.getItemById(409)) {
                 return pos.equals(currentBlock);
             }
 
