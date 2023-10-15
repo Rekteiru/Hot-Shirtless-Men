@@ -8,8 +8,8 @@ import net.minecraft.client.Minecraft;
 @Mod(modid = "hotshirtlessmen", useMetadata=true)
 public class main {
 
-    public static boolean BOW_TOGGLE = false;
-    public static boolean DRILL_TOGGLE = false;
+    public static boolean BOW_TOGGLE = true;
+    public static boolean DRILL_TOGGLE = true;
 
     public static Minecraft mc = Minecraft.getMinecraft();
 
