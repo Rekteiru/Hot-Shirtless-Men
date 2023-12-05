@@ -14,7 +14,15 @@ public class Drill {
         {
             if (main.DRILL_TOGGLE &&
                     itemstack.getItem() == currentItemHittingBlock.getItem() &&
-                    itemstack.getItem() == Item.getItemById(409)) {
+                    (
+                    itemstack.getItem() == Item.getItemById(409) ||  // prismarine shard
+                    itemstack.getItem() == Item.getItemById(397) ||  // player head
+                    itemstack.getItem() == Item.getItemById(270) ||  // wooden pickaxe
+                    itemstack.getItem() == Item.getItemById(274) ||  // stone pickaxe
+                    itemstack.getItem() == Item.getItemById(257) ||  // iron pickaxe
+                    itemstack.getItem() == Item.getItemById(285) ||  // golden pickaxe
+                    itemstack.getItem() == Item.getItemById(278)     // diamond pickaxe
+                    )) {
                 return pos.equals(currentBlock);
             }
 

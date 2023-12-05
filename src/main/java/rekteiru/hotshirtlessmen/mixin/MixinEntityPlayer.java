@@ -30,15 +30,14 @@ public abstract class MixinEntityPlayer {
 
     @Inject(method = "onUpdate", at = @At("HEAD"))
     private void bowFixStuff(CallbackInfo ci){
-        if (itemInUse != null &&
-                inventory != null &&
-                gameProfile != null &&
-                gameProfile == main.mc.thePlayer.getGameProfile()) {
+        if (/*main.Started && */itemInUse != null && inventory != null && gameProfile != null && main.mc.thePlayer.getGameProfile() != null){
+            if (gameProfile == main.mc.thePlayer.getGameProfile()) {
 
-            ItemStack itemstack = inventory.getCurrentItem();
+                ItemStack itemstack = inventory.getCurrentItem();
 
-            if (Bow.BowFix(itemInUse, itemstack)) {
-                itemInUse = itemstack;
+                if (Bow.BowFix(itemInUse, itemstack)) {
+                    itemInUse = itemstack;
+                }
             }
         }
     }
