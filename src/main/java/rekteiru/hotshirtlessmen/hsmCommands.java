@@ -1,13 +1,11 @@
 package rekteiru.hotshirtlessmen;
 
 import net.minecraft.command.CommandBase;
-import net.minecraft.command.CommandException;
+import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
 
-import java.util.Objects;
-
-public class hsmCommands extends CommandBase {
+public class hsmCommands extends CommandBase implements ICommand {
 
     @Override
     public String getCommandName() {
@@ -25,7 +23,12 @@ public class hsmCommands extends CommandBase {
     }
 
     @Override
-    public void processCommand(ICommandSender sender, String[] args) throws CommandException {
+    public boolean canCommandSenderUseCommand(ICommandSender sender) {
+        return true;
+    }
+
+    @Override
+    public void processCommand(ICommandSender sender, String[] args) {
         int length = args.length;
         if (args[0].equals("bow")) {
             if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
@@ -48,6 +51,28 @@ public class hsmCommands extends CommandBase {
                 main.mc.thePlayer.addChatMessage(new ChatComponentText("DrillFix ON"));
             } else {
                 main.mc.thePlayer.addChatMessage(new ChatComponentText("DrillFix OFF"));
+            }
+        } else if (args[0].equals("shirtless")) {
+            if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                main.HOTSHIRTLESSMEN_TOGGLE = args[1].equals("on");
+            } else {
+                main.HOTSHIRTLESSMEN_TOGGLE = !main.HOTSHIRTLESSMEN_TOGGLE;
+            }
+            if (main.HOTSHIRTLESSMEN_TOGGLE) {
+                main.mc.thePlayer.addChatMessage(new ChatComponentText("HotShirtlessMen ON"));
+            } else {
+                main.mc.thePlayer.addChatMessage(new ChatComponentText("HotShirtlessMen OFF"));
+            }
+        } else if (args[0].equals("feetless")) {
+            if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                main.HOTFEETLESSMEN_TOGGLE = args[1].equals("on");
+            } else {
+                main.HOTFEETLESSMEN_TOGGLE = !main.HOTFEETLESSMEN_TOGGLE;
+            }
+            if (main.HOTFEETLESSMEN_TOGGLE) {
+                main.mc.thePlayer.addChatMessage(new ChatComponentText("HotFeetlessMen ON"));
+            } else {
+                main.mc.thePlayer.addChatMessage(new ChatComponentText("HotFeetlessMen OFF"));
             }
         }
 
