@@ -30,50 +30,66 @@ public class hsmCommands extends CommandBase implements ICommand {
     @Override
     public void processCommand(ICommandSender sender, String[] args) {
         int length = args.length;
-        if (args[0].equals("bow")) {
-            if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
-                main.BOW_TOGGLE = args[1].equals("on");
-            } else {
-                main.BOW_TOGGLE = !main.BOW_TOGGLE;
-            }
-            if (main.BOW_TOGGLE) {
-                main.mc.thePlayer.addChatMessage(new ChatComponentText("BowFix ON"));
-            } else {
-                main.mc.thePlayer.addChatMessage(new ChatComponentText("BowFix OFF"));
-            }
-        } else if (args[0].equals("drill")) {
-            if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
-                main.DRILL_TOGGLE = args[1].equals("on");
-            } else {
-                main.DRILL_TOGGLE = !main.DRILL_TOGGLE;
-            }
-            if (main.DRILL_TOGGLE) {
-                main.mc.thePlayer.addChatMessage(new ChatComponentText("DrillFix ON"));
-            } else {
-                main.mc.thePlayer.addChatMessage(new ChatComponentText("DrillFix OFF"));
-            }
-        } else if (args[0].equals("shirtless")) {
-            if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
-                main.HOTSHIRTLESSMEN_TOGGLE = args[1].equals("on");
-            } else {
-                main.HOTSHIRTLESSMEN_TOGGLE = !main.HOTSHIRTLESSMEN_TOGGLE;
-            }
-            if (main.HOTSHIRTLESSMEN_TOGGLE) {
-                main.mc.thePlayer.addChatMessage(new ChatComponentText("HotShirtlessMen ON"));
-            } else {
-                main.mc.thePlayer.addChatMessage(new ChatComponentText("HotShirtlessMen OFF"));
-            }
-        } else if (args[0].equals("feetless")) {
-            if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
-                main.HOTFEETLESSMEN_TOGGLE = args[1].equals("on");
-            } else {
-                main.HOTFEETLESSMEN_TOGGLE = !main.HOTFEETLESSMEN_TOGGLE;
-            }
-            if (main.HOTFEETLESSMEN_TOGGLE) {
-                main.mc.thePlayer.addChatMessage(new ChatComponentText("HotFeetlessMen ON"));
-            } else {
-                main.mc.thePlayer.addChatMessage(new ChatComponentText("HotFeetlessMen OFF"));
-            }
+        switch (args[0]) {
+            case "bow":
+                if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                    main.BOW_TOGGLE = args[1].equals("on");
+                } else {
+                    main.BOW_TOGGLE = !main.BOW_TOGGLE;
+                }
+                if (main.BOW_TOGGLE) {
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("BowFix ON"));
+                } else {
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("BowFix OFF"));
+                }
+                break;
+            case "drill":
+                if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                    main.DRILL_TOGGLE = args[1].equals("on");
+                } else {
+                    main.DRILL_TOGGLE = !main.DRILL_TOGGLE;
+                }
+                if (main.DRILL_TOGGLE) {
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("DrillFix ON"));
+                } else {
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("DrillFix OFF"));
+                }
+                break;
+            case "shirtless":
+                if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                    main.HOTSHIRTLESSMEN_TOGGLE = args[1].equals("on");
+                } else {
+                    main.HOTSHIRTLESSMEN_TOGGLE = !main.HOTSHIRTLESSMEN_TOGGLE;
+                }
+                if (main.HOTSHIRTLESSMEN_TOGGLE) {
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("HotShirtlessMen ON"));
+                } else {
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("HotShirtlessMen OFF"));
+                }
+                break;
+            case "barefoot":
+                if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                    main.HOTBAREFOOTMEN_TOGGLE = args[1].equals("on");
+                } else {
+                    main.HOTBAREFOOTMEN_TOGGLE = !main.HOTBAREFOOTMEN_TOGGLE;
+                }
+                if (main.HOTBAREFOOTMEN_TOGGLE) {
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("HotBarefootMen ON"));
+                } else {
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("HotBarefootMen OFF"));
+                }
+                break;
+            case "darkness":
+                if (length > 1) {
+                    try {
+                        int i = parseInt(args[1].replace("%", ""));
+                        main.darkness = 100 - Math.min(Math.max(i, 0), 100);
+                        main.mc.thePlayer.addChatMessage(new ChatComponentText("Darkness value set to " + main.darkness + "%"));
+                    } catch (Exception e) {
+                        main.mc.thePlayer.addChatMessage(new ChatComponentText("Incorrect usage, use /hsm darkness [percentage]"));
+                    }
+                }
+                break;
         }
 
     }

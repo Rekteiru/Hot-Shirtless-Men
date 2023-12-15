@@ -8,6 +8,6 @@
   "client": [
     "MixinPlayerControllerMP",
     "MixinEntityPlayer",
-    "MixinImageBufferDownload"
+    "MixinNetworkPlayerInfo"
   ]
 }

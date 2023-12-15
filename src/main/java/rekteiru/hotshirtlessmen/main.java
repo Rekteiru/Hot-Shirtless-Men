@@ -8,7 +8,6 @@ import net.minecraft.client.Minecraft;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.net.URL;
 
 @Mod(modid = "hotshirtlessmen", useMetadata=true)
 public class main {
@@ -16,39 +15,54 @@ public class main {
     public static boolean BOW_TOGGLE = true;
     public static boolean DRILL_TOGGLE = true;
     public static boolean HOTSHIRTLESSMEN_TOGGLE = false;
-    public static boolean HOTFEETLESSMEN_TOGGLE = false;
+    public static boolean HOTBAREFOOTMEN_TOGGLE = false;
     public static Minecraft mc = Minecraft.getMinecraft();
     public static BufferedImage gigachad = null;
     public static BufferedImage hotfeet = null;
+    public static int darkness = 25;
+    public static String basePath = "";
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
+        basePath = System.getProperty("user.dir").replace("\\","/");
         ClientCommandHandler.instance.registerCommand(new hsmCommands());
+
+        try {
+            clearFolder(new File(basePath+"/assets/"+modid+"/PlayerSkins/"));
+        } catch (Exception e) {
+            System.out.println("Unable to clear PlayerSkins folder");
+        }
+
         boolean bool = true;
         int tries = 0;
         while (bool) {
             try {
-                gigachad = ImageIO.read(new URL("https://s.namemc.com/i/2d0d2dd073beef70.png"))
-                        .getSubimage(HotShirtlessMenFeature.imgArray[11][0],HotShirtlessMenFeature.imgArray[11][1],HotShirtlessMenFeature.imgArray[11][2],HotShirtlessMenFeature.imgArray[11][3]);
 
-                BufferedImage temp = new BufferedImage(64,64,BufferedImage.TYPE_INT_ARGB);
-                for (int x = 12; x < HotShirtlessMenFeature.imgArray.length; x++) {
-                    temp.getGraphics().drawImage(ImageIO.read(new URL("https://s.namemc.com/i/2d0d2dd073beef70.png"))
-                            .getSubimage(HotShirtlessMenFeature.imgArray[x][0],HotShirtlessMenFeature.imgArray[x][1],HotShirtlessMenFeature.imgArray[x][2],HotShirtlessMenFeature.imgArray[x][3])
-                            ,HotShirtlessMenFeature.imgArray[x][0],HotShirtlessMenFeature.imgArray[x][1],null);
-                }
-                hotfeet = temp;
+                gigachad = ImageIO.read(new File(basePath+"/assets/"+modid+"/gigachad.png"));
+
+                hotfeet = ImageIO.read(new File(basePath+"/assets/"+modid+"/hotfeet.png"));
 
                 if (gigachad != null && hotfeet != null) {
+                    gigachad = (BufferedImage) HotMenFeature.desaturate(gigachad);
+                    hotfeet = (BufferedImage) HotMenFeature.desaturate(hotfeet);
                     bool = false;
                 }
             } catch (Exception e) {
                 tries++;
                 System.out.println("Failed to load a texture, "+tries+" trie(s). Exception: "+e);
-                if (tries > 300) {
+                if (tries > 69) {
                     System.out.println("Too many attempts to load textures. Skipping textures.");
                     bool = false;
                 }
+            }
+        }
+    }
+
+    public static void clearFolder(File folder) {
+        File[] files = folder.listFiles();
+        if(files!=null) {
+            for(File f: files) {
+                f.delete();
             }
         }
     }
