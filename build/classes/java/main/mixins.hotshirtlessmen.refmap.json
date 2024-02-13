@@ -1,17 +1,11 @@
 {
   "mappings": {
-    "rekteiru/hotshirtlessmen/mixin/MixinNetworkPlayerInfo": {
-      "getLocationSkin": "Lnet/minecraft/client/network/NetworkPlayerInfo;func_178837_g()Lnet/minecraft/util/ResourceLocation;"
-    },
     "rekteiru/hotshirtlessmen/mixin/MixinEntityPlayer": {
       "onUpdate": "Lnet/minecraft/entity/player/EntityPlayer;func_70071_h_()V"
     }
   },
   "data": {
     "named:intermediary": {
-      "rekteiru/hotshirtlessmen/mixin/MixinNetworkPlayerInfo": {
-        "getLocationSkin": "Lnet/minecraft/client/network/NetworkPlayerInfo;func_178837_g()Lnet/minecraft/util/ResourceLocation;"
-      },
       "rekteiru/hotshirtlessmen/mixin/MixinEntityPlayer": {
         "onUpdate": "Lnet/minecraft/entity/player/EntityPlayer;func_70071_h_()V"
       }

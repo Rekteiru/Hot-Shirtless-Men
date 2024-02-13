@@ -1,6 +1,7 @@
 package rekteiru.hotshirtlessmen;
 
 import net.minecraft.command.CommandBase;
+import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.util.ChatComponentText;
@@ -19,78 +20,59 @@ public class hsmCommands extends CommandBase implements ICommand {
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return "Use /hsm [drill|bow] to toggle drill/bow functionality.";
+        return "§2Use /hsm help for list of commands";
     }
 
     @Override
-    public boolean canCommandSenderUseCommand(ICommandSender sender) {
-        return true;
-    }
-
-    @Override
-    public void processCommand(ICommandSender sender, String[] args) {
-        int length = args.length;
-        switch (args[0]) {
-            case "bow":
-                if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
-                    main.BOW_TOGGLE = args[1].equals("on");
-                } else {
-                    main.BOW_TOGGLE = !main.BOW_TOGGLE;
-                }
-                if (main.BOW_TOGGLE) {
-                    main.mc.thePlayer.addChatMessage(new ChatComponentText("BowFix ON"));
-                } else {
-                    main.mc.thePlayer.addChatMessage(new ChatComponentText("BowFix OFF"));
-                }
-                break;
-            case "drill":
-                if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
-                    main.DRILL_TOGGLE = args[1].equals("on");
-                } else {
-                    main.DRILL_TOGGLE = !main.DRILL_TOGGLE;
-                }
-                if (main.DRILL_TOGGLE) {
-                    main.mc.thePlayer.addChatMessage(new ChatComponentText("DrillFix ON"));
-                } else {
-                    main.mc.thePlayer.addChatMessage(new ChatComponentText("DrillFix OFF"));
-                }
-                break;
-            case "shirtless":
-                if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
-                    main.HOTSHIRTLESSMEN_TOGGLE = args[1].equals("on");
-                } else {
-                    main.HOTSHIRTLESSMEN_TOGGLE = !main.HOTSHIRTLESSMEN_TOGGLE;
-                }
-                if (main.HOTSHIRTLESSMEN_TOGGLE) {
-                    main.mc.thePlayer.addChatMessage(new ChatComponentText("HotShirtlessMen ON"));
-                } else {
-                    main.mc.thePlayer.addChatMessage(new ChatComponentText("HotShirtlessMen OFF"));
-                }
-                break;
-            case "barefoot":
-                if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
-                    main.HOTBAREFOOTMEN_TOGGLE = args[1].equals("on");
-                } else {
-                    main.HOTBAREFOOTMEN_TOGGLE = !main.HOTBAREFOOTMEN_TOGGLE;
-                }
-                if (main.HOTBAREFOOTMEN_TOGGLE) {
-                    main.mc.thePlayer.addChatMessage(new ChatComponentText("HotBarefootMen ON"));
-                } else {
-                    main.mc.thePlayer.addChatMessage(new ChatComponentText("HotBarefootMen OFF"));
-                }
-                break;
-            case "darkness":
-                if (length > 1) {
-                    try {
-                        int i = parseInt(args[1].replace("%", ""));
-                        main.darkness = 100 - Math.min(Math.max(i, 0), 100);
-                        main.mc.thePlayer.addChatMessage(new ChatComponentText("Darkness value set to " + main.darkness + "%"));
-                    } catch (Exception e) {
-                        main.mc.thePlayer.addChatMessage(new ChatComponentText("Incorrect usage, use /hsm darkness [percentage]"));
+    public void processCommand(ICommandSender sender, String[] args) throws CommandException {
+        if (args == null || args.length == 0) {
+            main.mc.thePlayer.addChatMessage(new ChatComponentText("§2Use /hsm help for list of commands"));
+        } else {
+            int length = args.length;
+            switch (args[0]) {
+                case "help":
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("§2List of commands:\n§a/hsm drill [on/off] to toggle drill fix\n§a/hsm bow [on/off] to toggle bow fix\n§a/hsm quiver [on/off] to toggle quiver fix"));
+                    break;
+                case "bow":
+                    if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                        main.BOW_TOGGLE = args[1].equals("on");
+                    } else {
+                        main.BOW_TOGGLE = !main.BOW_TOGGLE;
                     }
-                }
-                break;
+                    chatCommandFeedback(main.BOW_TOGGLE,"BowFix");
+                    break;
+                case "drill":
+                    if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                        main.DRILL_TOGGLE = args[1].equals("on");
+                    } else {
+                        main.DRILL_TOGGLE = !main.DRILL_TOGGLE;
+                    }
+                    chatCommandFeedback(main.DRILL_TOGGLE,"DrillFix");
+                    break;
+                case "quiver":
+                    if (length > 1 && (args[1].equals("on") || args[1].equals("off"))) {
+                        main.QUIVER_TOGGLE = args[1].equals("on");
+                    } else {
+                        main.QUIVER_TOGGLE = !main.QUIVER_TOGGLE;
+                    }
+                    chatCommandFeedback(main.QUIVER_TOGGLE,"QuiverFix");
+                    break;
+                default:
+                    main.mc.thePlayer.addChatMessage(new ChatComponentText("§2Use /hsm help for list of commands"));
+                    break;
+            }
         }
+    }
 
+    private void chatCommandFeedback(Boolean bool, String type) {
+        if (!type.isEmpty()) {
+            type = "§b§l" + type;
+            if (bool) {
+                type += " §2ON";
+            } else {
+                type += " §4OFF";
+            }
+            main.mc.thePlayer.addChatMessage(new ChatComponentText(type));
+        }
     }
 }

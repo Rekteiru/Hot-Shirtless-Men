@@ -2,7 +2,6 @@ v1	named	intermediary
 FIELD	rekteiru/hotshirtlessmen/mixin/MixinEntityPlayer	Lnet/minecraft/item/ItemStack;	itemInUse	field_71074_e
 FIELD	rekteiru/hotshirtlessmen/mixin/MixinEntityPlayer	Lnet/minecraft/entity/player/InventoryPlayer;	inventory	field_71071_by
 FIELD	rekteiru/hotshirtlessmen/mixin/MixinEntityPlayer	Lcom/mojang/authlib/GameProfile;	gameProfile	field_146106_i
-FIELD	rekteiru/hotshirtlessmen/mixin/MixinNetworkPlayerInfo	Lnet/minecraft/util/ResourceLocation;	locationSkin	field_178865_e
 FIELD	rekteiru/hotshirtlessmen/mixin/MixinPlayerControllerMP	Lnet/minecraft/item/ItemStack;	currentItemHittingBlock	field_85183_f
 FIELD	rekteiru/hotshirtlessmen/mixin/MixinPlayerControllerMP	Lnet/minecraft/util/BlockPos;	currentBlock	field_178895_c
 METHOD	rekteiru/hotshirtlessmen/mixin/MixinPlayerControllerMP	(Lnet/minecraft/util/BlockPos;)Z	isHittingPosition	func_178893_a

@@ -1,6 +1,7 @@
 package rekteiru.hotshirtlessmen.mixin;
 
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.util.ChatComponentText;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -30,15 +31,26 @@ public abstract class MixinEntityPlayer {
 
     @Inject(method = "onUpdate", at = @At("HEAD"))
     private void bowFixStuff(CallbackInfo ci){
-        if (/*main.Started && */itemInUse != null && inventory != null && gameProfile != null && main.mc.thePlayer.getGameProfile() != null){
-            if (gameProfile == main.mc.thePlayer.getGameProfile()) {
+        try {
+            if (itemInUse != null && inventory != null && gameProfile != null && main.mc.thePlayer != null){
+                if (gameProfile == main.mc.thePlayer.getGameProfile()) {
 
-                ItemStack itemstack = inventory.getCurrentItem();
+                    ItemStack itemstack = inventory.getCurrentItem();
 
-                if (Bow.BowFix(itemInUse, itemstack)) {
-                    itemInUse = itemstack;
+                    if (Bow.BowFix(itemInUse, itemstack)) {
+                        itemInUse = itemstack;
+                    }
                 }
             }
+        } catch (NullPointerException npe) {
+            try {
+                // main.mc.thePlayer.addChatMessage(new ChatComponentText("NPE prevented: "+npe));
+                System.out.println(npe);
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
     }
 }

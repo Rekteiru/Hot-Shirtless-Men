@@ -5,12 +5,12 @@
     "description": "Hot Shirtless Men (and bows/drills fixes) no rat I promise.",
     "version": "1.0.4",
     "mcversion": "1.8.9",
-    "url": "",
+    "url": "https://github.com/Rekteiru/hot-shirtless-men/",
     "updateUrl": "",
     "authorList": [
       "Rekteiru"
     ],
-    "credits": "romangraef",
+    "credits": "nea / romangraef",
     "logoFile": "",
     "screenshots": [],
     "dependencies": []

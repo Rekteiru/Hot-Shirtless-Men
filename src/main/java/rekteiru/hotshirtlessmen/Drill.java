@@ -14,6 +14,7 @@ public class Drill {
         {
             if (main.DRILL_TOGGLE &&
                     itemstack.getItem() == currentItemHittingBlock.getItem() &&
+                    utils.getUUID(itemstack).equals(utils.getUUID(currentItemHittingBlock)) &&
                     (
                     itemstack.getItem() == Item.getItemById(409) ||  // prismarine shard
                     itemstack.getItem() == Item.getItemById(397) ||  // player head
@@ -26,7 +27,12 @@ public class Drill {
                 return pos.equals(currentBlock);
             }
 
-            flag = itemstack.getItem() == currentItemHittingBlock.getItem() && ItemStack.areItemStackTagsEqual(itemstack, currentItemHittingBlock) && (itemstack.isItemStackDamageable() || itemstack.getMetadata() == currentItemHittingBlock.getMetadata());
+            flag = itemstack.getItem() == currentItemHittingBlock.getItem() &&
+                    ItemStack.areItemStackTagsEqual(itemstack, currentItemHittingBlock) &&
+                    (
+                            itemstack.isItemStackDamageable() ||
+                            itemstack.getMetadata() == currentItemHittingBlock.getMetadata()
+                    );
         }
 
         return pos.equals(currentBlock) && flag;
