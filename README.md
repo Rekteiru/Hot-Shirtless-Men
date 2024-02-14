@@ -1,4 +1,4 @@
-# bow-and-drill-fix
+# hot-shirtless-men (HSM)
 Fixes bows and drills resetting on inventory update (video below)
 
 Explanation:
