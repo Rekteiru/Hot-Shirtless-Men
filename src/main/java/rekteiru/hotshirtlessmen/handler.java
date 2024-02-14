@@ -24,6 +24,7 @@ public class handler {
                             !id.contains("SHORTBOW") &&
                             !id.contains("MACHINE_GUN_BOW") &&
                             !id.contains("ITEM_SPIRIT_BOW") &&
+                            !utils.getUUID(main.previousItem).equals(utils.getUUID(item)) &&
                             quiver
                     ) {
                         main.mc.thePlayer.inventory.setInventorySlotContents(8,new ItemStack(Item.getItemById(262),64)); // 9th slot arrows
@@ -44,7 +45,7 @@ public class handler {
                 main.mc.thePlayer.addChatMessage(new ChatComponentText("§b§lQuiverFix §rtoggled §4§lOFF §rfrom the lack of quiver arrows"));
                 quiver = false;
             }
-            if (msg.contains("You filled your quiver with")) {
+            if (msg.contains("You filled your quiver with") && !quiver) {
                 main.mc.thePlayer.addChatMessage(new ChatComponentText("§b§lQuiverFix §rtoggled back §2§lON §rby refilling quiver arrows"));
                 quiver = true;
             }
