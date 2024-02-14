@@ -11,7 +11,7 @@ import net.minecraft.client.Minecraft;
 public class main {
     public static final String modid = "hotshirtlessmen";
     public static boolean BOW_TOGGLE = true;
-    public static boolean QUIVER_TOGGLE = true;
+    public static boolean QUIVER_TOGGLE = false;
     public static boolean DRILL_TOGGLE = true;
     public static ItemStack previousItem = null;
     public static Minecraft mc = Minecraft.getMinecraft();
