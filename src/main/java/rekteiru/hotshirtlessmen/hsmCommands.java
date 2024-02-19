@@ -55,6 +55,7 @@ public class hsmCommands extends CommandBase implements ICommand {
                     } else {
                         main.QUIVER_TOGGLE = !main.QUIVER_TOGGLE;
                     }
+                    main.hasEnabledQuiver = main.QUIVER_TOGGLE;
                     chatCommandFeedback(main.QUIVER_TOGGLE,"QuiverFix");
                     break;
                 default:
