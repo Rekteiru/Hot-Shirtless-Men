@@ -17,9 +17,9 @@ Enjoy!
 ---USE AT YOUR OWN RISK, I AM NOT RESPONSIBLE IF YOU GET FLAGGED BY WATCHDOG (very low chance tbh)---
 
 Known issues:
+- Does not contain any rats (will add soonTM)
 - It can sometimes crash while drawing a bow under very specific circumstances. (fixed on 1.0.4)
 - If you swap between the same type of items while mining it wont reset the mining progress which is an unintended behaviour (fixed on 1.0.4)
-- Does not contain any rats (will add soonTM)
 
 Video showcase:
 https://medal.tv/games/minecraft/clips/1yFeoNtRqKT-Co/d1337B3kQcIF?invite=cr-MSxsZjcsMTc2OTYwOTA4LA
