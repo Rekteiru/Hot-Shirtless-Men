@@ -17,8 +17,6 @@ Enjoy!
 Support me on Ko-fi!
 https://ko-fi.com/rekteiru
 
----USE AT YOUR OWN RISK, I AM NOT RESPONSIBLE IF YOU GET FLAGGED BY WATCHDOG (very low chance tbh)---
-
 Known issues:
 - Does not contain any rats (will add soonTM)
 - It can sometimes crash while drawing a bow under very specific circumstances. (fixed on 1.0.4)
@@ -26,3 +24,5 @@ Known issues:
 
 Video showcase:
 https://medal.tv/games/minecraft/clips/1yFeoNtRqKT-Co/d1337B3kQcIF?invite=cr-MSxsZjcsMTc2OTYwOTA4LA
+
+---USE AT YOUR OWN RISK, I AM NOT RESPONSIBLE IF YOU GET FLAGGED BY WATCHDOG (very low chance tbh)---
