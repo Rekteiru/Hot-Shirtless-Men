@@ -14,6 +14,9 @@ Bow code is mine.
 
 Enjoy!
 
+Support me on Ko-fi!
+https://ko-fi.com/rekteiru
+
 ---USE AT YOUR OWN RISK, I AM NOT RESPONSIBLE IF YOU GET FLAGGED BY WATCHDOG (very low chance tbh)---
 
 Known issues:
