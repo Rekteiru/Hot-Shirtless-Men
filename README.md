@@ -14,8 +14,7 @@ Bow code is mine.
 
 Enjoy!
 
-Support me on Ko-fi!
-https://ko-fi.com/rekteiru
+Support me on Ko-fi!❤️ https://ko-fi.com/Rekteiru
 
 Known issues:
 - Does not contain any rats (will add soonTM)
