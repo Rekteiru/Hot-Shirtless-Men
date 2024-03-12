@@ -1,4 +1,5 @@
-# Hot Shirtless Men (HSM) is a minecraft 1.8.9 mod that fixes bows and drills resetting on inventory updates (video below)
+# Hot Shirtless Men (HSM)
+HSM is a minecraft 1.8.9 mod that fixes bows and drills resetting on inventory updates (video below)
 
 Explanation:
   Minecraft has a bug which if two NBTs are even very slightly different it'll cause your current action to be broken, whether it being mining a block or pulling a bow.
@@ -22,4 +23,4 @@ Known issues:
 Video showcase:
 https://medal.tv/games/minecraft/clips/1yFeoNtRqKT-Co/d1337B3kQcIF?invite=cr-MSxsZjcsMTc2OTYwOTA4LA
 
-- - - USE AT YOUR OWN RISK! Since this mod changes how your client acts (by fixing an already fixed bug in higher versions), it can *technically* trigger watchdog at some point in the future, but currently it is completely safe to use - - -
+- USE AT YOUR OWN RISK! Since this mod changes how your client acts (by fixing an already fixed bug in higher versions), it can *technically* trigger watchdog at some point in the future, but currently it is completely safe to use
