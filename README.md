@@ -10,12 +10,12 @@ tldr: it fixes an annoying minecraft bug that got fixed on vanilla 1.14.4
 If you think this mod is a cheat Mojang and Hypixel already tried fixing the Drill issue, and Hypixel already fixed the Bow issue on Skyblock. Stop coping.
 
 Mojang bugfix links:
-  1.14.4 pre-1 (version that fixed it)
-    https://bugs.mojang.com/browse/MC-154362
-    https://bugs.mojang.com/browse/MC-153892
-    https://bugs.mojang.com/browse/MC-100946
-  1.15.2 (version that reintroduced it RIP)
-    https://bugs.mojang.com/browse/MC-176559
+  - 1.14.4 pre-1 (version that fixed it)
+    - https://bugs.mojang.com/browse/MC-154362
+    - https://bugs.mojang.com/browse/MC-153892
+    - https://bugs.mojang.com/browse/MC-100946
+  - 1.15.2 (version that reintroduced it RIP)
+    - https://bugs.mojang.com/browse/MC-176559
 
 Message me on discord if you need any help: Rekterino
 
