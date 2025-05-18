@@ -11,7 +11,7 @@
 		"discord-server": "discord.gg/RsjQBFKTZ6",
 		"discord-tag": "rekterino"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/hotshirtlessmen/icon.png",
 	"environment": "*",
 	"entrypoints": {
