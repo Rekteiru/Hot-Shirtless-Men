@@ -57,7 +57,7 @@ public class HSM implements ModInitializer {
 			NbtCompound nbt2 = Objects.requireNonNull(map2.get(DataComponentTypes.CUSTOM_DATA)).copyNbt();
 			return nbt1.getString("UUID").equals(nbt2.getString("UUID"));
 		} catch (Exception e) {
-			LOGGER.error(e.toString());
+			LOGGER.error(String.valueOf(e));
 			return false;
 		}
 	}
