@@ -1,12 +1,12 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Minecraft Client" type="Application" factoryName="Application">
-    <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
-    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-    <option name="MAIN_CLASS_NAME" value="net.fabricmc.devlaunchinjector.Main" />
-    <option name="VM_PARAMETERS" value="&quot;-Dfabric.dli.config=C:\Users\user\Desktop\hotshirtlessmen\.gradle\loom-cache\launch.cfg&quot; &quot;-Dfabric.dli.env=client&quot; &quot;-Dfabric.dli.main=net.minecraft.launchwrapper.Launch&quot;" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run/" />
+  <configuration default="false" factoryName="Application" name="Minecraft Client" type="Application">
+    <option name="MAIN_CLASS_NAME" value="net.fabricmc.devlaunchinjector.Main"/>
+    <module name="HOT_SHIRTLESS_MEN.main"/>
+    <shortenClasspath name="ARGS_FILE"/>
+    <option name="VM_PARAMETERS" value="-Dfabric.dli.config=C:\Users\igorg\OneDrive\Área@@0020de@@0020Trabalho\HOT@@0020SHIRTLESS@@0020MEN\.gradle\loom-cache\launch.cfg -Dfabric.dli.env=client -Dfabric.dli.main=net.fabricmc.loader.impl.launch.knot.KnotClient"/>
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/run/"/>
     <method v="2">
-      <option name="Make" enabled="true" />
+      <option enabled="true" name="Make"/>
     </method>
-  </configuration>
+  <classpathModifications/></configuration>
 </component>

@@ -12,24 +12,19 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="Forge" />
-      <option name="name" value="Forge" />
-      <option name="url" value="https://maven.minecraftforge.net/" />
+      <option name="id" value="LoomLocalRemappedMods" />
+      <option name="name" value="LoomLocalRemappedMods" />
+      <option name="url" value="file:/$PROJECT_DIR$/../../Área%20de%20Trabalho/HOT%20SHIRTLESS%20MEN/.gradle/loom-cache/remapped_mods/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="MavenRepo" />
-      <option name="name" value="MavenRepo" />
-      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+      <option name="id" value="LoomGlobalMinecraft" />
+      <option name="name" value="LoomGlobalMinecraft" />
+      <option name="url" value="file:/$USER_HOME$/.gradle/caches/fabric-loom/minecraftMaven/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="UserLocalRemappedMods" />
-      <option name="name" value="UserLocalRemappedMods" />
-      <option name="url" value="file:/$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="Architectury" />
-      <option name="name" value="Architectury" />
-      <option name="url" value="https://maven.architectury.dev/" />
+      <option name="id" value="LoomLocalMinecraft" />
+      <option name="name" value="LoomLocalMinecraft" />
+      <option name="url" value="file:/$PROJECT_DIR$/../../Área%20de%20Trabalho/HOT%20SHIRTLESS%20MEN/.gradle/loom-cache/minecraftMaven/" />
     </remote-repository>
     <remote-repository>
       <option name="id" value="Fabric" />
@@ -42,14 +37,9 @@
       <option name="url" value="https://libraries.minecraft.net/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="maven" />
-      <option name="name" value="maven" />
-      <option name="url" value="https://repo.spongepowered.org/maven/" />
-    </remote-repository>
-    <remote-repository>
-      <option name="id" value="maven2" />
-      <option name="name" value="maven2" />
-      <option name="url" value="https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1" />
+      <option name="id" value="MavenRepo" />
+      <option name="name" value="MavenRepo" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
   </component>
 </project>

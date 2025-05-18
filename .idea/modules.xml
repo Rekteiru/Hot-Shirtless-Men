@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/bow-and-drill-fix.hotshirtlessmen.test.iml" filepath="$PROJECT_DIR$/.idea/modules/bow-and-drill-fix.hotshirtlessmen.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hot-shirtless-men.hotshirtlessmen.test.iml" filepath="$PROJECT_DIR$/.idea/modules/hot-shirtless-men.hotshirtlessmen.test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hotshirtlessmen.main.iml" filepath="$PROJECT_DIR$/.idea/modules/hotshirtlessmen.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hotshirtlessmen.test.iml" filepath="$PROJECT_DIR$/.idea/modules/hotshirtlessmen.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HOT_SHIRTLESS_MEN.main.iml" filepath="$PROJECT_DIR$/.idea/modules/HOT_SHIRTLESS_MEN.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HOT_SHIRTLESS_MEN.test.iml" filepath="$PROJECT_DIR$/.idea/modules/HOT_SHIRTLESS_MEN.test.iml" />
     </modules>
   </component>
 </project>
