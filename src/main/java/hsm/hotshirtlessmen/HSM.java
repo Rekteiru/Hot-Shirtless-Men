@@ -4,8 +4,6 @@ import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.component.Component;
 import net.minecraft.component.ComponentMap;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.nbt.NbtCompound;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -38,7 +36,9 @@ public class HSM implements ModInitializer {
 						if (i.type().toString().equals("minecraft:damage")) {
 							x |= 2;
 						} else if (i.type().toString().equals("minecraft:custom_data")) {
-							x |= 4;
+							HSM.LOGGER.info(i.value().toString());
+							HSM.LOGGER.info(j.value().toString());
+							x |= (byte) (compareUUIDs(i.value().toString(),j.value().toString()) ? 4 : 0);
 						} else {
                             //LOGGER.info("{} : {} != {}", i.type().toString(), i.value().toString(), j.value().toString());
 							x |= 1;
@@ -48,18 +48,25 @@ public class HSM implements ModInitializer {
 			}
 		}
 		//HSM.LOGGER.info(String.valueOf(x));
-		return ((x&2)==2 || ((x&4)==4 && compareUUIDs(component1,component2))) && (x&1)==0;
+		return ((x&2)==2 || (x&4)==4) && (x&1)==0;
 	}
 
-	public static boolean compareUUIDs(ComponentMap map1, ComponentMap map2) {
+	public static boolean compareUUIDs(String str1, String str2) {
 		try {
-			NbtCompound nbt1 = Objects.requireNonNull(map1.get(DataComponentTypes.CUSTOM_DATA)).copyNbt();
-			NbtCompound nbt2 = Objects.requireNonNull(map2.get(DataComponentTypes.CUSTOM_DATA)).copyNbt();
-			return nbt1.getString("UUID").equals(nbt2.getString("UUID"));
+			return getUUID(str1).equals(getUUID(str2)) && getUUID(str1).length() > 30;
 		} catch (Exception e) {
 			LOGGER.error(String.valueOf(e));
 			return false;
 		}
+	}
+
+	private static String getUUID(String str) {
+		if (str.contains("uuid:")) {
+			int i = str.indexOf("uuid:")+7;
+			int e = str.indexOf("\"",i);
+			str = e > 30 ? str.substring(i,e) : str;
+		}
+		return str;
 	}
 
 }

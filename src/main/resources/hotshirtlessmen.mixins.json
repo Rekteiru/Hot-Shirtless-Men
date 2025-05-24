@@ -4,7 +4,6 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "ClientPlayerInteractionManagerMixin",
-    "PlayerEntityMixin",
     "HeldItemRendererMixin"
   ],
   "injectors": {
@@ -12,7 +11,6 @@
   },
   "client": [
     "ClientPlayerInteractionManagerMixin",
-    "HeldItemRendererMixin",
-    "PlayerEntityMixin"
+    "HeldItemRendererMixin"
   ]
 }
