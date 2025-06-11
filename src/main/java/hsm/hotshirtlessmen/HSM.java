@@ -36,8 +36,8 @@ public class HSM implements ModInitializer {
 						if (i.type().toString().equals("minecraft:damage")) {
 							x |= 2;
 						} else if (i.type().toString().equals("minecraft:custom_data")) {
-							HSM.LOGGER.info(i.value().toString());
-							HSM.LOGGER.info(j.value().toString());
+							//HSM.LOGGER.info(i.value().toString());
+							//HSM.LOGGER.info(j.value().toString());
 							x |= (byte) (compareUUIDs(i.value().toString(),j.value().toString()) ? 4 : 0);
 						} else {
                             //LOGGER.info("{} : {} != {}", i.type().toString(), i.value().toString(), j.value().toString());
@@ -53,7 +53,7 @@ public class HSM implements ModInitializer {
 
 	public static boolean compareUUIDs(String str1, String str2) {
 		try {
-			return getUUID(str1).equals(getUUID(str2)) && getUUID(str1).length() > 30;
+			return getUUID(str1).equals(getUUID(str2)) && getUUID(str1).length() == 36;
 		} catch (Exception e) {
 			LOGGER.error(String.valueOf(e));
 			return false;
@@ -62,9 +62,9 @@ public class HSM implements ModInitializer {
 
 	private static String getUUID(String str) {
 		if (str.contains("uuid:")) {
-			int i = str.indexOf("uuid:")+7;
+			int i = str.indexOf("\"",str.indexOf("uuid:"))+1;
 			int e = str.indexOf("\"",i);
-			str = e > 30 ? str.substring(i,e) : str;
+			str = (e-i) == 36 ? str.substring(i,e) : str;
 		}
 		return str;
 	}
